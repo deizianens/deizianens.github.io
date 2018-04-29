@@ -1,2 +1,2 @@
-# deiziane.github.io
+# grrl.github.io
 Personal website
