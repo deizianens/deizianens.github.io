@@ -1,2 +1,2 @@
 # deiziane.github.io
-Personal site
+Personal website
