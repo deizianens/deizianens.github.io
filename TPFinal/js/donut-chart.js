@@ -1,7 +1,8 @@
 var country = "Brazil";
 var yearDonut = 1990;
 
-d3.selectAll(".pie").remove();
+function update(){
+// d3.selectAll(".pie").remove();
 d3_queue
     .queue()
     .defer(
@@ -9,11 +10,14 @@ d3_queue
         "./data/suicide-death-rate-by-age-wid.csv"
     )
     .await(ready_donut);
+}
+
+update();
 
 function ready_donut(error, data) {
     if (error) throw error;
     
-    d3.selectAll("#pie-id").remove();
+    d3.selectAll(".pie").remove();
 
     var idx = -1;
     // find country index on array
@@ -32,7 +36,7 @@ function bakeDonut(d) {
   
     document.getElementById("country-name-h3").innerHTML = country +", "+yearDonut;
     let sum = parseFloat(d.SeventyPlus) + parseFloat(d.FiftyToSixtyNine) + parseFloat(d.FifteenToFourtyNine) + parseFloat(d.FiveToFourteen); 
-    
+    console.log(d.SeventyPlus +" "+ d.FifteenToFourtyNine +" "+ d.Entity);
     const pieData = [
         {name: 'Age: 70+', value: parseFloat((d.SeventyPlus*100)/sum).toFixed(1), color: '#225ea8'},
         {name: 'Age: 50-69', value: parseFloat((d.FiftyToSixtyNine*100)/sum).toFixed(1), color: '#41b6c4'},
@@ -181,8 +185,10 @@ function bakeDonut(d) {
   
   function setYearDonut(y){
       yearDonut = y;
+      // update();
   }
 
   function setCountryDonut(c){
     country = c;
+    console.log(c);
 }

@@ -1,9 +1,3 @@
-var file = "none";
-
-function setFile(f){
-    file = f;
-}
-
 // Load data (asynchronously)
 d3_queue
     .queue()
@@ -11,21 +5,10 @@ d3_queue
         d3.csv,
         "./data/suicide-female-ihme.csv", 
     )
-    .defer(
-        d3.csv,
-        "./data/incidence-of-mental-disorders-ihme.csv", 
-    )
     .await(ready_drop);
 
-function ready_drop(error, d1, d2){
+function ready_drop(error, data){
     if(error) throw error;
-    var data;
-    if(file == "donut"){
-        data = d1;
-    }
-    else{
-        data = d2;
-    }
    
     var countries = new Array();
     var j = 0;
@@ -58,7 +41,7 @@ function ready_drop(error, d1, d2){
 
     // generate a random index value and set the selector to the city
 	// at that index value in the data array
-    d3.select(".custom-select").property("selectedIndex", 28);
+    d3.select(".custom-select").property("selectedIndex", 24);
     
     // when the user selects a city, set the value of the index variable
 	// and call the update(); function
@@ -88,27 +71,13 @@ function ready_drop(error, d1, d2){
     }
     
     function updateGraph(y, c){
-        console.log(file);
-        if(file == "donut"){
             $.getScript("js/donut-chart.js",function(){
                 setYearDonut(y);
                 setCountryDonut(c);
             });
-            $.getScript("js/lollipop.js",function(){
-                setYearLol(y); 
-            });
-        }
-        else{
-            $.getScript("js/map.js",function(){
-                setYearMap(y);
-            });
-            $.getScript("js/treemap.js",function(){
-                updateTreemap(y,c);
-            });
-            $.getScript("js/line-chart.js",function(){
-                setCountryLine(c);
-            });
-        }
+            // $.getScript("js/lollipop.js",function(){
+            //     setYearLol(y); 
+            // });
     }
 
     

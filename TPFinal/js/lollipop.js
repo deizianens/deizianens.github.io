@@ -31,12 +31,12 @@ d3_queue
     )
     .defer(
         d3.csv,
-        "./data/suicide-death-rates-wid.csv",
+        "./data/suicide-rate-ihme.csv",
         function (d) {
             if (d.Year == year)
                 dataMapB.push(
-                    [d.Entity,
-                    parseFloat(d.Deaths)]
+                    [d.Location,
+                    parseFloat(d.Value)]
                 );
         }
     )
@@ -51,12 +51,15 @@ function ready_lol(error) {
     d3.selectAll("#lolli").remove();
     var j = 0;
     var data = new Array();
+
     //order both sexes by value
     dataMapB.sort(function (a, b) {
         return b[1] - a[1];
     })
+
     dataMapB = dataMapB.slice(0, 10);
-    console.log(dataMapB);
+    // console.log(dataMapB);  
+
     //get all the data together
     for (var i = 0; i < dataMapF.length && j < dataMapB.length; i++) {
         if (dataMapB[j][0] == dataMapF[i][0]) {
