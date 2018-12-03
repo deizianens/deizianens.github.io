@@ -3,7 +3,7 @@ var graphData = new Array(27);
 
 d3.queue()
   .defer(
-        d3.csv, "./data/prevalence-by-mental-and-substance-use-disorder.csv")
+        d3.csv, "data/prevalence-by-mental-and-substance-use-disorder.csv")
   .await(ready);
 
 function ready(error, data){
@@ -94,7 +94,7 @@ function ready(error, data){
 
 //callback function
 function drawChart(data){
-  var svgWidth = 1000, svgHeight = 500;
+  var svgWidth = 1300, svgHeight = 650;
   var margin = {
     top: 20,
     right: 20,
@@ -105,6 +105,7 @@ function drawChart(data){
   var height = svgHeight - margin.top - margin.bottom;
 
   d3.selectAll("#line-chart").remove();
+  d3.selectAll(".tooltip").remove();
 
   var svg = d3.select("#svgcontainer")
     .append("svg")
@@ -137,10 +138,11 @@ function drawChart(data){
   g.append("g").attr("transform", "translate(0, 0)").call(yAxis).append("text")
    .attr("fill", "#000")
    .attr("transform", "rotate(-90)")
-   .attr("y", 6)
+   .attr("y", -40)
    .attr("dy", "0.71em")
    .attr("text-anchor", "end")
-   .text("Percentage (%)");
+   .text("Absolute percentage (%)")
+   .attr("font-size", "15px");
 
   // d3's line generator
   var lineFunction = d3.line()
@@ -153,9 +155,6 @@ function drawChart(data){
     .attr("class", "line")
     .attr("d", lineFunction);
 
-    /*  PAREI AQUI
-        falta colocar os valores dos pontos proximo do "mouseover"
-   */
   // create a tooltip
   var Tooltip = d3.select("#svgcontainer")
       .append("div")
@@ -167,20 +166,6 @@ function drawChart(data){
       .style("border-radius", "5px")
       .style("padding", "5px")
 
-  // Three function that change the tooltip when user hover / move / leave a cell
-  var mouseover = function(d) {
-    Tooltip.style("opacity", 1)
-  }
-  var mousemove = function(d) {
-    Tooltip
-      .html("Exact value: " + d.Disorder)
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
-  }
-  var mouseleave = function(d) {
-    Tooltip.style("opacity", 0)
-  }
-
   // Add the points
   svg
     .append("g")
@@ -189,16 +174,20 @@ function drawChart(data){
     .data(data)
     .enter()
     .append("circle")
-      .attr("class", "myCircle")
-      .attr("cx", function(d) { return scaleX(d.Year) } )
-      .attr("cy", function(d) { return scaleY(d.Disorder) } )
-      .attr("r", 5)
-      .attr("stroke", "#69b3a2")
-      .attr("stroke-width", 3)
-      .attr("fill", "white")
-      .on("mouseover", mouseover)
-      .on("mousemove", mousemove)
-      .on("mouseleave", mouseleave)
+    .attr("class", "myCircle")
+    .attr("cx", function(d) { return scaleX(d.Year) } )
+    .attr("cy", function(d) { return scaleY(d.Disorder) } )
+    .attr("r", 5)
+    .on("mouseover", function(d) {
+      Tooltip
+      .style("opacity", 1)
+      .html(d.Disorder)
+      .style("left", (d3.mouse(this)[0]+70) + "px")
+      .style("top", (d3.mouse(this)[1]+120) + "px")
+    })
+    .on("mouseleave", function(d) {
+      Tooltip.style("opacity", 0)
+    })
 
 }
 
@@ -210,6 +199,6 @@ function setCountryLine(c, d){
 
   d3.queue()
   .defer(
-        d3.csv, "prevalence-by-mental-and-substance-use-disorder.csv")
+        d3.csv, "data/prevalence-by-mental-and-substance-use-disorder.csv")
   .await(ready);
 }
