@@ -359,14 +359,16 @@ div.tooltip {
 
 /* dropdown */
 #customDropdown,
-#customDropdown2{
+#customDropdown2,
+#customDropdown3{
   position: relative;
   display: inline;
   margin-left:10px; 
 }
 
 .custom-select,
-.custom-select2 {
+.custom-select2,
+.custom-select3 {
   border: 1px solid #CCC;
   border-radius: 0;
   -moz-appearance: none;
@@ -384,6 +386,10 @@ div.tooltip {
 }
 
 .custom-select2{
+  width: 30%;
+}
+
+.custom-select3{
   width: 30%;
 }
 
