@@ -56,6 +56,12 @@ function ready_drop(error, data){
 		index = this.value;
 		update_drop();
     })
+
+    d3.select(".custom-select3")
+	.on("change", function(d) {
+		index = this.value;
+		update_drop2();
+    })
     
     // update the paragraph text to match the selection made by the user
 	function update_drop(){
@@ -65,20 +71,36 @@ function ready_drop(error, data){
         var selectedYear = d3.select("#customDropdown2")
             .select("select")
             .property("value")
+        
+        var selectedYear2 = d3.select("#customDropdown3")
+            .select("select")
+            .property("value")
 
         // console.log(selectedYear, selectedCountry);
-        updateGraph(selectedYear, selectedCountry);
+        updateGraph(selectedYear, selectedCountry, selectedYear2);
+    }
+
+    function update_drop2(){
+        var selectedYear2 = d3.select("#customDropdown3")
+            .select("select")
+            .property("value")
+
+        // console.log(selectedYear, selectedCountry);
+        updateLol(selectedYear2);
     }
     
-    function updateGraph(y, c){
+    function updateGraph(y, c, y2){
             $.getScript("js/donut-chart.js",function(){
                 setYearDonut(y);
                 setCountryDonut(c);
             });
-            // $.getScript("js/lollipop.js",function(){
-            //     setYearLol(y); 
-            // });
+
     }
 
+    function updateLol(y2){
+        $.getScript("js/lollipop.js",function(){
+            setYearLol(y2); 
+        });
+    }
     
 }
