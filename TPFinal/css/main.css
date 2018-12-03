@@ -13,8 +13,6 @@
   pointer-events: all;
 }
 
-
-
 .focus circle {
   fill: none;
   stroke: steelblue;
@@ -48,6 +46,19 @@
   margin-left: 10px;
 }
 
+.myCircle{
+  stroke: #ffab00;
+  fill: #ffab00;
+}
+
 .myCircle:hover {
   stroke: black;
+}
+
+div.tooltip{
+  position: absolute;
+  background-color: lightsteelblue;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 5px;
 }
