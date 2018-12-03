@@ -40,7 +40,7 @@ d3_queue
 
 var width = 500,
     height = 300,
-    legendWidth = 280;
+    legendWidth = 299.9;
 
 d3.selectAll("#svg-treemap").remove();
 d3.selectAll(".legend").remove();
@@ -97,32 +97,32 @@ function ready(error, dep, dys, sch, bip, anx, anr, bul, sub) {
         "name": "Mental Health",
         "children": [
             {
-                "name": "Mental Disorders", "children": [
+                "name": "Desordens Mentais", "children": [
                     {
                         name: "Depressão",
-                        "category": "Mental Disorders",
+                        "category": "Desordens Mentais",
                         "value": d1[0]
                     },
                     {
                         name: "Distimia",
-                        "category": "Mental Disorders",
+                        "category": "Desordens Mentais",
                         "value": d1[1]
                     },
                     {
                         name: "Esquizofrenia",
-                        "category": "Mental Disorders",
+                        "category": "Desordens Mentais",
                         "value": d1[2]
                     }
                     ,
                     {
                         name: "Transtorno Bipolar",
-                        "category": "Mental Disorders",
+                        "category": "Desordens Mentais",
                         "value": d1[3]
                     }
                     ,
                     {
-                        name: "Anxiedade",
-                        "category": "Mental Disorders",
+                        name: "Ansiedade",
+                        "category": "Desordens Mentais",
                         "value": d1[4]
                     }
                 ]

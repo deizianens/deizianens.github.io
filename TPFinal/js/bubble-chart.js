@@ -538,12 +538,12 @@ function update(error, h1, h2, h3, p1, p2, p3, d1, d2, d3, i1, i2, i3) {
     chart.select("Sweden");
     chart.select("Switzerland");
     chart.select("Netherlands");
-    chart.select("Syria");
-    chart.select("Burundi");
-    chart.select("Estonia");
-    chart.select("Azerbaijan");
-    chart.select("Guinea");
-    chart.select("Turkey");
+    chart.select("Israel");
+    chart.select("Haiti");
+    chart.select("Uganda");
+    chart.select("Costa Rica");
+    chart.select("Portugal");
+    chart.select("India");
     chart.draw();
     chart.startTransition();
 }

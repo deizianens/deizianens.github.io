@@ -1,0 +1,53 @@
+#line-chart{
+  border: 1px solid lightgray;
+}
+
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
+#center{
+  margin-bottom: 50px;
+}
+
+#country-title{
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  word-spacing: 10px;
+  display: block;
+  font-size: 2rem;
+}
+
+.dash-country, .MentalDisorders{
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline;
+  left: 15%;
+}
+
+#customDropdown, #selectorDisorder{
+  position: relative;
+  display: inline;
+  margin-left: 10px;
+}
+
+.myCircle:hover {
+  stroke: black;
+}

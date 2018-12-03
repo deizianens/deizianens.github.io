@@ -41,6 +41,37 @@ var svg = d3.select("#s-line").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+d3.selectAll(".item").on("change", update);
+checkboxChange();
+
+function checkboxChange() {
+    var choices = [];
+    d3.selectAll(".item").each(function (d) {
+        cb = d3.select(this);
+        if (cb.property("checked")) {
+            choices.push(cb.property("value"));
+        }
+    });
+
+    if (choices.length > 0) {
+        newData = data.filter(function (d, i) { return choices.includes(d); });
+    } else {
+        newData = data;
+    }
+
+    newRows = table.selectAll("tr")
+        .data(newData, function (d) { return d; });
+    newRows.enter()
+        .append("tr")
+        .append("td")
+        .text(function (d) { return d; });
+    newRows.exit()
+        .remove();
+    
+        update_line_s();
+}
+
+function update_line_s(){
 d3_queue
     .queue()
     .defer(
@@ -48,10 +79,10 @@ d3_queue
         "./data/suicide-death-rates-wid.csv",
     )
     .await(ready_line);
+}
 
 function ready_line(error, d) {
     if (error) throw error;
-    // var data = d3.tsvParse(myData);
     var data = new Array();
     var yearsArray = new Array();
     var values = new Array();
@@ -61,22 +92,22 @@ function ready_line(error, d) {
     d.sort(function (a, b) {
         return a.Year - b.Year;
     })
-    
-    for(var i = 1990; i<2017; i++){
+
+    for (var i = 1990; i < 2017; i++) {
         yearsArray.push(i);
-    } 
-
-
-    for(var i = 0; i<numCountries; i++){
-        countries.push(d[i].Entity);
-    } 
-
-    for(var i = 0; i<numYears; i++){
-        data.push(d.slice((i*MAX_COUNTRIES), (i*MAX_COUNTRIES)+numCountries));
     }
 
-    for(var j = 0; j<numCountries; j++){
-        for(var i = 0; i<numYears; i++){
+
+    for (var i = 0; i < numCountries; i++) {
+        countries.push(d[i].Entity);
+    }
+
+    for (var i = 0; i < numYears; i++) {
+        data.push(d.slice((i * MAX_COUNTRIES), (i * MAX_COUNTRIES) + numCountries));
+    }
+
+    for (var j = 0; j < numCountries; j++) {
+        for (var i = 0; i < numYears; i++) {
             values.push(data[i][j].Deaths);
         }
     }
@@ -250,7 +281,7 @@ function ready_line(error, d) {
 
             d3.selectAll(".mouse-per-line")
                 .attr("transform", function (d, i) {
-                   
+
                     var xDate = x.invert(mouse[0]),
                         bisect = d3.bisector(function (d) { return d.date; }).right;
                     idx = bisect(d.values, xDate);
@@ -277,3 +308,4 @@ function ready_line(error, d) {
                 });
         });
 }
+

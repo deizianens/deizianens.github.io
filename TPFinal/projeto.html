@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Projeto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3.v4.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+  <body>
+    <div id="center">
+      <!-- start with BRAZIL -->
+      <div class="title" id="country-title">Brasil</div>
+      <div class="dash-country">País:
+        <div id="customDropdown"></div>
+      </div>
+
+      <div class="MentalDisorders">Mental Disorders:
+        <div id="selectorDisorder">
+            <select class="custom-select2">
+              <option value="Schizophrenia">Schizophrenia</option>
+              <option value="Bipolar">Bipolar disorder</option>
+              <option value="Eating">Eating disorders</option>
+              <option value="Anxiety">Anxiety disorders</option>
+              <option value="Drug">Drug use disorders</option>
+              <option value="Depression">Depression</option>
+              <option value="Alcohol">Alcohol use disorders</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    
+    <div id="svgcontainer">
+      <!-- o SVG vem aqui -->
+    </div>
+
+    <!-- NAO EH BEM UM FOOOOOOOOTEEEEEEEEEEEEERRRRRR kkkkkk
+        Enfim, essa nota ficara abaixo do grafico
+      -->
+    <footer>
+      <p>Share of the total population with a given mental health or substance use disorder.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src= "js/visualizacao.js"></script>
+    <script src= "js/line_chart_dropdown.js"></script>
+  </body>
+</html>
