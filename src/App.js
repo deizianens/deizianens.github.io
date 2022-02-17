@@ -1,21 +1,17 @@
+import { FormattedMessage } from "react-intl";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
+
+      <main>
+        <h1>
+          <FormattedMessage id="app.greetings" />
+        </h1>
+      </main>
     </div>
   );
 }
