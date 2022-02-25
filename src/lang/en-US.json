@@ -1,10 +1,10 @@
 {
     "app.greetings": "Hi, I'm Deiziane - a frontend developer currently based in Minas Gerais, Brazil.",
-    "app.work": "Work",
     "app.sanar": "Frontend developer",
     "app.sanar.description": "Worked on creating the initital setup of the web project defining patterns, architecture, unit and E2E tests strategy. Also worked on creating a component library",
     "app.tw": "Consultant developer",
     "app.tw.description": "Participated during four weeks of intense agile training in India, working with a team under the guidance of experienced ThoughtWorkers. Learned agility concepts, consultant skills and best development practices like Pairing, TDD, Refactoring, Continuous Integration and Continuous Delivery (CI & CD).",
-    "app.bio": "Bio",
-    "app.nav.about": "About"
+    "app.nav.about": "About",
+    "app.work": "Work",
+    "app.nav.contact": "Contact"
 }

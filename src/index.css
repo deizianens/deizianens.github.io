@@ -57,6 +57,14 @@ body {
   background: var(--clr-background);
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -64,8 +72,15 @@ h4,
 h5,
 h6 {
   font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--fs-700);
 }
 
 button {
-  background-color: var(--clr-primary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

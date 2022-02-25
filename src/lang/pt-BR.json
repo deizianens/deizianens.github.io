@@ -1,10 +1,10 @@
 {
-    "app.greetings": "Olá, eu sou Deiziane - uma desenvolvedora frontend atualmente morando em Minas Gerais, Brasil",
-    "app.work": "Profissional",
+    "app.greetings": "Oi, eu sou Deiziane - uma desenvolvedora frontend atualmente morando em Minas Gerais, Brasil",
     "app.sanar": "Desenvolvedora frontend",
     "app.sanar.description": "Trabalhou na criação do setup inicial do projeto, definindo padrões e estratégia de testes unitários e E2E. Também trabalhou na criação de uma biblioteca de componentes.",
     "app.tw": "Desenvolvedora Consultora",
     "app.tw.description": "Participou de quatro semanas de intenso treinamento ágil na Índia, trabalhando com uma equipe sob a orientação de experientes desenvolvedores e analistas de negócios da ThoughtWorks. aprendeu conceitos de agilidade, habilidades de consultoria e melhores práticas de desenvolvimento como pareamento, TDD, refatoração de código, Integração Contínua e Entrega Contínua (CI & CD).",
-    "app.bio": "Bio",
-    "app.nav.about": "Sobre"
+    "app.nav.about": "Sobre",
+    "app.nav.work": "Profissional",
+    "app.nav.contact": "Contato"
 }
