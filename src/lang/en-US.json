@@ -5,6 +5,6 @@
     "app.tw": "Consultant developer",
     "app.tw.description": "Participated during four weeks of intense agile training in India, working with a team under the guidance of experienced ThoughtWorkers. Learned agility concepts, consultant skills and best development practices like Pairing, TDD, Refactoring, Continuous Integration and Continuous Delivery (CI & CD).",
     "app.nav.about": "About",
-    "app.work": "Work",
+    "app.nav.work": "Work",
     "app.nav.contact": "Contact"
 }
