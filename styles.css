@@ -7,7 +7,9 @@
   --vwMin: 420;
   --vwMax: 1280;
   font-size: 18px;
-  font-size: calc( (var(--fsMin) * 1px) + (var(--fsMax) - var(--fsMin)) * (100vw - (var(--vwMin) * 1px)) / (var(--vwMax) - var(--vwMin)));
+  font-size: calc(
+ (var(--fsMin) * 1px) + (var(--fsMax) - var(--fsMin)) *
+ (100vw - (var(--vwMin) * 1px)) / (var(--vwMax) - var(--vwMin)));
 }
 
 * {
@@ -81,6 +83,8 @@ span {
 }
 
 .buttons {
+  display: flex;
+  justify-content: center;
   padding: 30px 0;
 }
 
@@ -144,9 +148,25 @@ span {
           animation: stripe-slide 12s infinite linear forwards;
 }
 
-.btn--large {
-  width: 50%;
+
+@media (max-width: 902px) {
+  .buttons {
+    padding: 10px 0;
+  }
 }
+
+@media (max-width: 420px) {
+  .buttons {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .btn {
+    margin: 10px 10px;
+    padding: 12px 17px 22px;
+  }
+}
+
 
 .wrapper {
   max-width: 30em;
