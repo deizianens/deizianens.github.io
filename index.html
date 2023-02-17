@@ -1,61 +1,222 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olá | Deiziane Silva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hi there! | Deiziane Silva</title>
     <meta name="description" content="Deiziane Silva's portfolio" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>document.documentElement.className = "js"; var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e }; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting-cells.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/fxx5dng.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
 
-<body class="demo-1 loading">
+  <body class="loading">
     <main data-scroll-container>
-        <div class="frame">
-            <nav class="frame__links">
-                <a class="hover-line" href="https://github.com/deizianens">GitHub</a>
-                <a class="hover-line" href="https://www.linkedin.com/in/deiziane-ns/">Linkedin</a>
-                <a class="hover-line" href="https://t.me/deizianens">Telegram</a>
-                <a class="hover-line" href="https://api.whatsapp.com/send?phone=5531987691376">WhatsApp</a>
-            </nav>
+      <div class="frame">
+        <nav class="frame__links">
+          <a class="hover-line" href="https://github.com/deizianens">GitHub</a>
+          <a class="hover-line" href="https://www.linkedin.com/in/deiziane-ns/"
+            >Linkedin</a
+          >
+          <a class="hover-line" href="https://t.me/deizianens">Telegram</a>
+          <a
+            class="hover-line"
+            href="https://api.whatsapp.com/send?phone=5531987691376"
+            >WhatsApp</a
+          >
+        </nav>
+      </div>
+      <div class="content">
+        <h2
+          class="content__title content__title--size-m"
+          data-text-rep
+          data-splitting
+        >
+          Deiziane
+        </h2>
+        <p>
+          Deiziane Silva is a Frontend Developer currently living in Minas
+          Gerais, Brazil. Her main focus in technology is build frontend
+          accessible and responsible applications. Has a keen interest in
+          learning new technologies, given it is useful to build value and
+          expand her knowledge. <br />
+          Currently working as a Frontend Developer at
+          <a class="hover-line" href="https://sanar.com.br/" target="_blank"
+            >Sanar</a
+          >. Previously
+          <a
+            class="hover-line"
+            href="https://www.thoughtworks.com"
+            target="_blank"
+            >ThoughtWorks</a
+          >.
+        </p>
+
+        <h2
+          class="content__title content__title--size-m content__title--left"
+          data-text-rep
+          data-splitting
+        >
+          Get in
+        </h2>
+        <h2
+          class="content__title content__title--size-m content__title--right"
+          data-text-rep
+          data-splitting
+        >
+          Touch
+        </h2>
+        <p>
+          Thank you! I look forward to hearing from you.<br />
+          You can contact me via any of the ways below:
+        </p>
+        <div class="frame__links">
+          <a href="mailto:deiziane_ns@hotmail.com" class="hover-line">Email</a>
+          <a class="hover-line" href="https://www.linkedin.com/in/deiziane-ns/"
+            >Linkedin</a
+          >
+          <a class="hover-line" href="https://t.me/deizianens">Telegram</a>
+          <a
+            class="hover-line"
+            href="https://api.whatsapp.com/send?phone=5531987691376"
+            >WhatsApp</a
+          >
         </div>
-        <div class="content">
-            <h2 class="content__title content__title--size-s" data-text-rep>Deiziane</h2>
-            <p>
-                Deiziane Silva is a Frontend Developer currently living in Minas Gerais,
-                Brazil. Her main focus in technology is build frontend accessible
-                and responsible applications. Has a keen interest in learning new
-                technologies, given it is useful to build value and expand her
-                knowledge. </br>
-                Currently working as a Frontend Developer at <a class="hover-line" href="https://sanar.com.br/"
-                    target="_blank">Sanar</a>.
-                Previously <a class="hover-line" href="https://www.thoughtworks.com" target="_blank">ThoughtWorks</a>.
-            </p>
-
-            <h2 class="content__title content__title--size-s content__title--left" data-text-rep>Get in</h2>
-            <h2 class="content__title content__title--size-s content__title--right" data-text-rep>Touch</h2>
-            <p>Thank you! I look forward to hearing from you.</br> You can contact me via any of the ways below:</p>
-            <div class="frame__links">
-                <a href="mailto:deiziane_ns@hotmail.com" class="hover-line">Email</a>
-                <a class="hover-line" href="https://www.linkedin.com/in/deiziane-ns/">Linkedin</a>
-                <a class="hover-line" href="https://t.me/deizianens">Telegram</a>
-                <a class="hover-line" href="https://api.whatsapp.com/send?phone=5531987691376">WhatsApp</a>
-            </div>
-            <a href="./assets/DeizianeSilva_Resume.pdf" class="hover-line" download>Download Resume</a>
-
-            <p class="footer">Website based on Codrops <a class="hover-line"
-                    href="https://tympanus.net/codrops/2022/04/13/on-scroll-text-repetition-animation/">On-Scroll Text
-                    Repetition Animation</a></p>
-
+        <div class="frame__download">
+          <a href="./assets/DeizianeSilva_Resume.pdf" download
+            >Download Resume</a
+          >
         </div>
+
+        <p class="footer">
+          Website based on Codrops
+          <a
+            class="hover-line"
+            href="https://tympanus.net/codrops/2022/04/13/on-scroll-text-repetition-animation/"
+            >On-Scroll Text Repetition Animation</a
+          >
+        </p>
+      </div>
+      <div class="cursor">
+        <svg
+          class="cursor__line cursor__line--horizontal"
+          viewBox="0 0 200 20"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <filter
+              id="filter-noise-x"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+              filterUnits="objectBoundingBox"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0"
+                numOctaves="1"
+                result="warp"
+              />
+              <feOffset dx="-30" result="warpOffset" />
+              <feDisplacementMap
+                xChannelSelector="R"
+                yChannelSelector="G"
+                scale="30"
+                in="SourceGraphic"
+                in2="warpOffset"
+              />
+            </filter>
+          </defs>
+          <line
+            class="cursor__line-element"
+            x1="0"
+            y1="10"
+            x2="200"
+            y2="10"
+            shape-rendering="crispEdges"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+        <svg
+          class="cursor__line cursor__line--vertical"
+          viewBox="0 0 20 200"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <filter
+              id="filter-noise-y"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+              filterUnits="objectBoundingBox"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0"
+                numOctaves="1"
+                result="warp"
+              />
+              <feOffset dy="-30" result="warpOffset" />
+              <feDisplacementMap
+                xChannelSelector="R"
+                yChannelSelector="G"
+                scale="30"
+                in="SourceGraphic"
+                in2="warpOffset"
+              />
+            </filter>
+          </defs>
+          <line
+            class="cursor__line-element"
+            x1="10"
+            y1="0"
+            x2="10"
+            y2="200"
+            shape-rendering="crispEdges"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
     </main>
     <script type="module" src="js/index.js"></script>
-</body>
-
+  </body>
 </html>

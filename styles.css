@@ -14,8 +14,8 @@ body {
   --color-bg: #000;
   --color-link: #fff;
   --color-link-hover: #fff;
-  --font-size-s: 13vw;
-  --font-size-m: 16vw;
+  --font-size-s: 10vw;
+  --font-size-m: 13vw;
   --font-size-l: 24vw;
   --font-size-xl: 26vw;
   --font-family: widescreen-ex, sans-serif;
@@ -26,9 +26,11 @@ body {
   --color-rep-text-main: var(--color-text);
   --color-rep-outline: var(--color-text);
   --color-rep-bg: var(--color-bg);
-  /* Adjust these depending on your font */
+  --color-rep-text-hover: #d03939;
   --font-factor: 0.059;
   --font-line: 0.745;
+  --cursor-stroke: #fff;
+	--cursor-stroke-width: 1px;
   color: var(--color-text);
   background-color: var(--color-bg);
   font-family: halyard-micro, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
@@ -38,6 +40,51 @@ body {
   overflow-y: scroll;
 }
 
+ /* hide default cursor */
+ .cursor {
+	display: block;
+}
+
+@media (any-pointer:fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		z-index: 1001;
+	}
+
+	.no-js .cursor {
+		display: none;
+	}
+
+	.cursor__line {
+		position: fixed;
+		display: block;
+		will-change: transform, opacity;
+	}
+	
+	.cursor__line--horizontal {
+		top: -10px;
+		left: -10%;
+		width: 120%;
+		height: 20px;
+	}
+	
+	.cursor__line--vertical {
+		left: -10px;
+		top: -10%;
+		height: 120%;
+		width: 20px;
+	}
+	
+	.cursor__line-element {
+		fill: none;
+		stroke: var(--cursor-stroke);
+		stroke-width: var(--cursor-stroke-width);
+	}
+}
 
 /* Page Loader */
 .js .loading::before,
@@ -104,7 +151,7 @@ a:focus-visible {
   /* Draw a very noticeable focus style for
 	 keyboard-focus on browsers that do support
 	 :focus-visible */
-  outline: 2px solid red;
+  outline: 2px solid #d03939;
   background: transparent;
 }
 
@@ -131,15 +178,30 @@ main {
   margin-right: 1rem;
 }
 
-.hover-line,
-.cda-sponsor-link {
+.frame__download {
+  margin: 1.5rem;
+  padding: .5em;
+  border: 1px solid currentColor;
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
+  transition: outline-width 200ms ease, outline-offset 200ms ease;
+}
+
+.frame__download:hover,
+.frame__download:focus {
+  outline: 1px solid currentColor;
+  outline-width: 3px;
+  outline-offset: -3px;
+}
+
+
+.hover-line {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
 }
 
-.hover-line::before,
-.cda-sponsor-link::before {
+.hover-line::before {
   content: '';
   height: 1px;
   width: 100%;
@@ -150,8 +212,7 @@ main {
   transform-origin: 0% 50%;
 }
 
-.hover-line:hover::before,
-.cda-sponsor-link:hover::before {
+.hover-line:hover::before {
   transform: scaleX(0);
   transform-origin: 100% 50%;
 }
@@ -250,7 +311,5 @@ p.footer {
     grid-area: links;
   }
 
-  .frame__links--demos {
-    grid-area: demos;
-  }
+  
 }
